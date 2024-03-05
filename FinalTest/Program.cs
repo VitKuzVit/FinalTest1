@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System;
+
+class Program
 {
     static void Main(string[] args)
     {
@@ -8,14 +10,17 @@
         //принимает на вход текст в переменную input
         string[] inputArray = input.Split(' ');
         //Задаем массив inputArray равный значнию введенных данных пользователем(разделенный пробелом)
-        
+        string[] resultArray = GetStringsLengthLessThanOrEqualThree(inputArray);
+        //Задаем массив resultArray с помощью функции GetStringsLengthLessThanOrEqualThree
 
         Console.WriteLine("Результат:");
         Console.WriteLine(inputArray);
-       Console.WriteLine(string.Join(", ", resultArray));
+        Console.WriteLine(string.Join(", ", resultArray));
     }
 
-    int count = 0; // переменная счетчик
+    static string[] GetStringsLengthLessThanOrEqualThree(string[] inputArray)
+    {
+        int count = 0; // переменная счетчик
         for (int i = 0; i < inputArray.Length; i++) //цикл FOR по длинне массива для определения длиины итогового массива
         {
             if (inputArray[i].Length <= 3)// условие: если длинна индекса массива меньше или равена 3 count +1
@@ -34,3 +39,7 @@
                 index++;
             }
         }
+
+        return resultArray;
+    }
+}
