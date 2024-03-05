@@ -24,4 +24,13 @@
             }
         }
 
-        
+        string[] resultArray = new string[count];// массив строк resultArray принимает значение размера счетчика COUNT
+        int index = 0; // переменная index
+        for (int i = 0; i < inputArray.Length; i++) //цикл FOR по длинне массива для принятия новых значений
+        {
+            if (inputArray[i].Length <= 3)// условие: если индекс массива меньше или равен 3 
+            {
+                resultArray[index] = inputArray[i];// то в тело массива resultArray приваевается значение inputArray
+                index++;
+            }
+        }
